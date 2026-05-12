@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { useApp } from '@/hooks/useAppContext';
 import { AppProvider } from '@/hooks/AppProvider';
 

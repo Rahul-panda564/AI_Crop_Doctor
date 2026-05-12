@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { createContext, useContext } from 'react';
 import type { LanguageCode, Screen, TabScreen, ScanRecord, DiseaseInfo } from '@/types';
 
