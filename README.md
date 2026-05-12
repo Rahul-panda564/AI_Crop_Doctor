@@ -1,6 +1,9 @@
 # 🌿 CropGenius: AI-Powered Crop Doctor
 
+![CropGenius Hero](./public/hero-main.png)
+
 **CropGenius** is a state-of-the-art Progressive Web Application (PWA) designed to help farmers identify crop diseases instantly using AI. By leveraging **TensorFlow.js** for on-device inference, the app works even in areas with poor internet connectivity, providing critical diagnostic support directly in the field.
+
 
 ---
 
@@ -17,7 +20,19 @@
 
 ## 🏗️ Technical Architecture
 
-### 1. The AI Engine (The Brain)
+### 1. System Overview
+```mermaid
+graph TD
+    User((User)) --> PWA[PWA Frontend - React 19]
+    PWA --> TFJS[TensorFlow.js Engine]
+    TFJS --> Model[(On-Device Model)]
+    PWA --> Weather[Weather API - wttr.in]
+    PWA --> LocalStorage[(Local History)]
+    PWA --> ServiceWorker[Service Worker - Offline Support]
+```
+
+### 2. The AI Engine (The Brain)
+
 *   **Model Type**: Convolutional Neural Network (CNN) optimized for mobile vision.
 *   **Dataset**: Trained on the **PlantVillage Dataset** (54,303 images of healthy and diseased plant leaves).
 *   **Format**: Converted from Keras (`.h5`) to TensorFlow.js Layers Model for browser execution.
@@ -28,7 +43,25 @@
     4.  **Prediction**: The model outputs a probability array of 38 classes.
     5.  **Post-processing**: The top-confidence class is mapped to our disease database.
 
-### 2. The Frontend Stack
+### 3. System Flow
+```mermaid
+sequenceDiagram
+    participant U as User
+    participant C as Camera/Upload
+    participant P as Preprocessing
+    participant M as AI Model (TF.js)
+    participant D as Database/Result
+
+    U->>C: Capture Leaf Image
+    C->>P: 224x224 Resizing & Normalization
+    P->>M: Input Tensor [1, 224, 224, 3]
+    M->>M: Inference (On-device)
+    M->>D: Confidence Scores
+    D->>U: Display Diagnosis & Treatment
+```
+
+### 4. The Frontend Stack
+
 *   **Framework**: React 19 + Vite (for ultra-fast builds).
 *   **Type Safety**: TypeScript for robust, error-free development.
 *   **Styling**: Tailwind CSS for a modern, responsive UI.
