@@ -1,8 +1,9 @@
 # 🌿 CropGenius: AI-Powered Crop Doctor
 
-![CropGenius Hero](./public/hero-main.png)
+![CropGenius Home](./public/screenshots/home.png)
 
 **CropGenius** is a state-of-the-art Progressive Web Application (PWA) designed to help farmers identify crop diseases instantly using AI. By leveraging **TensorFlow.js** for on-device inference, the app works even in areas with poor internet connectivity, providing critical diagnostic support directly in the field.
+
 
 
 ---
@@ -17,6 +18,15 @@
 *   **Premium UX**: A "Mobile-First" glassmorphic design built with Tailwind CSS and smooth Framer-like animations.
 
 ---
+
+## 📱 App Screenshots
+
+| Home | Scan | History | Settings |
+|------|------|---------|----------|
+| ![Home](./public/screenshots/home.png) | ![Scan](./public/screenshots/scan.png) | ![History](./public/screenshots/history.png) | ![Settings](./public/screenshots/settings.png) |
+
+---
+
 
 ## 🏗️ Technical Architecture
 
