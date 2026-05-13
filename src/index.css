@@ -40,14 +40,19 @@
 
   body {
     @apply bg-neutral-900 text-foreground;
+    height: 100dvh;
+    width: 100vw;
     overflow: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overscroll-behavior-y: none;
+    position: fixed;
+    top: 0;
+    left: 0;
   }
 
   #root {
-    @apply h-screen w-full;
+    @apply h-full w-full;
   }
 }
 
@@ -58,5 +63,14 @@
   .no-scrollbar {
     -ms-overflow-style: none;
     scrollbar-width: none;
+  }
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  .pt-safe {
+    padding-top: env(safe-area-inset-top);
+  }
+  .min-h-screen-safe {
+    min-height: 100dvh;
   }
 }

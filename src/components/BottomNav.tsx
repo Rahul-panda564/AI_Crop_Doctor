@@ -14,7 +14,7 @@ export default function BottomNav() {
   const { activeTab, setActiveTab, language } = useApp();
 
   return (
-    <nav className="shrink-0 h-16 bg-white/90 backdrop-blur-lg border-t border-gray-200 z-50 flex items-center justify-around select-none">
+    <nav className="shrink-0 h-[calc(4rem+env(safe-area-inset-bottom))] pb-safe bg-white/90 backdrop-blur-lg border-t border-gray-200 z-50 flex items-center justify-around select-none">
       {TABS.map((tab) => {
         const isActive = activeTab === tab.key;
         const Icon = tab.icon;
